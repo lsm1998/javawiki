@@ -9,10 +9,10 @@ compile_web:
 	cd web && npm install && npm run build-prod
 
 build_api: compile_api
-	docker build -t ${API_IMAGE_NAME}:${IMAGE_VERSION} -f ./doc/deploy/server/Dockerfile
+	docker build -t ${API_IMAGE_NAME}:${IMAGE_VERSION} -f ./doc/deploy/api/Dockerfile .
 
 build_web:
-	docker build -t ${WEB_IMAGE_NAME}:${IMAGE_VERSION} -f ./doc/deploy/web/Dockerfile
+	docker build -t ${WEB_IMAGE_NAME}:${IMAGE_VERSION} -f ./doc/deploy/web/Dockerfile .
 
 build: build_api build_web
 
